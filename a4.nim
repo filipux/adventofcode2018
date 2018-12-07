@@ -46,7 +46,7 @@ proc loadLogs():Logs  =
 # Part 1
 
 var logs = loadLogs()
-var guard = logs.mostSleepyGuard()
+let guard = logs.mostSleepyGuard()
 var minute = logs[guard.id].mostSleepyMinute().minute
 
 echo "Part1: ", guard.id * minute
@@ -54,5 +54,6 @@ echo "Part1: ", guard.id * minute
 # Part 2
 
 logs.sort((a,b:(int, Naps)) => cmp(mostSleepyMinute(b[1]).totalSleep, mostSleepyMinute(a[1]).totalSleep))
-let (guardID, naps) = toSeq(logs.pairs)[0]
-echo "Part2: ", guardID * mostSleepyMinute(naps).minute
+let (guard2, naps) = toSeq(logs.pairs)[0]
+let minute2 = mostSleepyMinute(naps).minute
+echo "Part2: ", guard2 * minute2
