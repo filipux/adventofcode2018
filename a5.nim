@@ -7,7 +7,7 @@ proc toList(s:string):DoublyLinkedList[char] =
     result = initDoublyLinkedList[char]()
     for c in s: result.append(c)
 
-proc shouldReactChars(a,b:char):bool = abs(a.int - b.int) == 32
+proc shouldReactChars(a,b:char):bool = abs(a.int - b.int) == abs('a'.int - 'A'.int)
 
 proc react(l:var DoublyLinkedList[char]) =
     for k in l.nodes:
@@ -25,7 +25,7 @@ list.react()
 echo "Part 1: ", list.len
 
 # Part 2:
-    
+
 var minLen = data.len
 for c in 'a'..'z':
     var unitList = data.toList()
