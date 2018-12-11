@@ -1,4 +1,4 @@
-import strutils, sequtils, strscans, sugar, lists, tables, sets, heapqueue, algorithm, tables
+import strutils, sequtils, strscans, sugar, algorithm, tables
 
 # --- Node class ---
 
@@ -6,12 +6,6 @@ type GenericNode[T] = ref object
     value:T
     parents: seq[GenericNode[T]]
     children: seq[GenericNode[T]]
-
-proc `$`(n:GenericNode):string =
-    var a = n.parents.mapIt(it.value).join(",")
-    var b = n.value
-    var c = n.children.mapIt(it.value).join(",")
-    result = "[" & a & "] -> " & "" & b & "" & " -> [" & c & "]"
 
 proc newNode[T](value:T):GenericNode[T]=
     result = new(GenericNode[T])
@@ -28,9 +22,7 @@ proc getOrAdd(g:var Graph, value:char):Node =
         result = newNode(value)
         g.add(result)
     elif gf.len == 1:
-        result = gf[0]
-    else:
-        raise newException(ValueError, "Don't do that...")    
+        result = gf[0]  
 
 proc remove(g:var Graph, n:Node) =
     for np in n.parents:
@@ -38,8 +30,7 @@ proc remove(g:var Graph, n:Node) =
     for nc in n.children:
         nc.parents = nc.parents.filterIt(it != n)
     let index = g.find(n)
-    if index >= 0:
-        g.del(index)
+    if index >= 0: g.del(index)
 
 proc remove(g:var Graph, value:char) =
     for index, n in g:
@@ -75,7 +66,6 @@ while true:
     part1 &= orphans[0].value
     graph.remove(orphans[0])
 
-
 echo "Part 1: ", part1
 
 # --- Part 2 ---
@@ -85,16 +75,19 @@ var workers = newTable[char, int]()
 var step = 0
 
 while true:
+    # decrease all worker time and remove if zero
     for k in workers.keys:
         dec(workers[k])
         if workers[k] <= 0:
             workers.del(k)
             graph.remove(k)
 
+    # find all possible nodes, e.g. those with no parents and not already worked on
     var orphans = graph.filterIt(it.parents.len == 0)
                     .filterIt(not workers.hasKey(it.value))
                         .sorted(cmp)
 
+    # start new workers
     while workers.len < 5 and orphans.len > 0:
         let value = orphans[0].value
         let time =  61 + orphans[0].value.int - 'A'.int
