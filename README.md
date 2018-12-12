@@ -9,7 +9,7 @@
 | 5 | Started with string based regex solution but went with DoublyLinkedList for speed (0.1 seconds for both parts) | https://github.com/filipux/adventofcode2018/blob/master/a5.nim  |
 | 6 | Hard problem. Inititally solved part #1 using a super fast flood fill technique but had to change to a slower method to solve part #2 with same code (0.2 sec for both parts).  | https://github.com/filipux/adventofcode2018/blob/master/a6.nim  |
 | 7 | Graph problem that got a bit bloated. Why isn't there a Graph class in the Nim standard library? Tried out generics for the first time. Used strscans instead of regex to parse input. | https://github.com/filipux/adventofcode2018/blob/master/a7.nim  |
-| 8 | Easier problem. readTree() turned out great, super happy about my code this time! | https://github.com/filipux/adventofcode2018/blob/master/a8.nim  |
+| 8 | Easier problem. readTree() turned out great, super happy about my code this time! Learned about seq.pop()| https://github.com/filipux/adventofcode2018/blob/master/a8.nim  |
 
 
 
