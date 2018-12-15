@@ -15,7 +15,7 @@
 | 11 | Easy. Immediately recognised the problem as one that could make use an integral map. Had to read up on wikipedia how to implement one but it was very straight forward. | https://github.com/filipux/adventofcode2018/blob/master/a11.nim  |
 | 12 | Meh. Learned how to index arrays backwards using [^] | https://github.com/filipux/adventofcode2018/blob/master/a12.nim  |
 | 13 | I didn't like this one at all. Horrible horrible code that I don't want to see ever again. | https://github.com/filipux/adventofcode2018/blob/master/a13.nim  |
-
+| 14 | Easy once you realise you need to check for Part 2 after each added recipe. | https://github.com/filipux/adventofcode2018/blob/master/a14.nim  |
 
 
 
