@@ -2,11 +2,11 @@ import sequtils, strutils
 
 const puzzleInput =  "047801"
 const puzzleInputInt = puzzleInput.parseInt
-const puzzleInputList = puzzleInput.mapIt(parseInt($it).int8)
+const puzzleInputList = puzzleInput.mapIt(parseInt($it))
 
 var elf1 = 0
 var elf2 = 1
-var scoreBoard:seq[int8] = @[3.int8, 7.int8]
+var scoreBoard:seq[int] = @[3, 7]
 
 template CheckPart2() =
     if scoreboard.len > puzzleInput.len:
