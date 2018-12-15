@@ -13,6 +13,8 @@
 | 9 | Easily solved using DoublyLinkedRing. ring.head.prev.prev.prev.prev.prev.prev.prev 😄| https://github.com/filipux/adventofcode2018/blob/master/a09.nim  |
 | 10 | Also quite easy. Hardest part was figuring out when to stop time and how to print the output| https://github.com/filipux/adventofcode2018/blob/master/a10.nim  |
 | 11 | Easy. Immediately recognised the problem as one that could make use an integral map. Had to read up on wikipedia how to implement one but it was very straight forward. | https://github.com/filipux/adventofcode2018/blob/master/a11.nim  |
+| 12 | Meh. Learned how to index arrays backwards using [^] | https://github.com/filipux/adventofcode2018/blob/master/a12.nim  |
+| 13 | I didn't like this one at all. Horrible horrible code that I don't want to see ever again. | https://github.com/filipux/adventofcode2018/blob/master/a13.nim  |
 
 
 
