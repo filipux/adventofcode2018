@@ -17,6 +17,6 @@
 | 13 | I didn't like this one at all. Horrible horrible code that I don't want to see ever again. | https://github.com/filipux/adventofcode2018/blob/master/a13.nim  |
 | 14 | Easy once you realise you need to check for Part 2 after each added recipe. | https://github.com/filipux/adventofcode2018/blob/master/a14.nim  |
 | 15 | This was WAY too hard. Probably made 10% of all people give up on advent of code this year ☹️ I spent too much time on this so I didn't find the time to optimize the solution.It is is very slow, 13 seconds on my computer,  but optimizing it could be easy based on this quick profiling with nimprof: <pre>a15.nim: addNeighbour 628/1703 = 36.88%<br/>a15.nim: init 1096/1703 = 64.36%<br/>a15.nim: newDistanceMap 1697/1703 = 99.65%</pre>| https://github.com/filipux/adventofcode2018/blob/master/a15.nim  |
-
+| 16 | Lots of fun and easy compared to #15. Used templates to get nice CPU emulator code. | https://github.com/filipux/adventofcode2018/blob/master/a16.nim  |
 
 
