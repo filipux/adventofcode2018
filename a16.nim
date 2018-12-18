@@ -1,6 +1,7 @@
 import sequtils, strutils, re, tables
 
 # --- CPU ---
+
 type Quad = array[4, int]
 
 var registers = [0,0,0,0]
