@@ -1,32 +1,27 @@
 import sequtils, strutils, strscans, re, math
 
+type Position = tuple[x,y:int]
 type Map = seq[string]
 
 # --- Load map ---
 
 proc parseMap(data:seq[string]): Map =
-    var clay: seq[tuple[x,y:int]]
+    var clay = newSeq[Position]()
     
     for line in data:
-        var y,y1,y2,x,x1,x2:int
-        if line.scanf("y=$i, x=$i..$i",y,x1,x2):
-            for x in x1..x2:
-                clay.add((x,y))
-        if line.scanf("x=$i, y=$i..$i",x,y1,y2):
-            for y in y1..y2:
-                clay.add((x,y))
-    
+        let m = line.findAll(re"\d+").map(parseInt)
+        clay = clay.concat(toSeq(m[1]..m[2]).mapIt(if line[0] == 'y':(it,m[0]) else: (m[0],it)))
+
     var dx = clay.mapIt(it.x).min - 1
     var width = clay.mapIt(it.x).max - dx + 2
     var height = clay.mapIt(it.y).max + 2
 
     result = newSeqWith(height, '.'.repeat(width))
-    for c in clay:
-        result[c.y][c.x-dx] = '#'
+    for c in clay: result[c.y][c.x-dx] = '#'
     result[0][500-dx] = '+'
     result[1][500-dx] = '|'
     
-var map = parseMap(readFile("17_input.txt").splitLines)
+var map = parseMap(toSeq(lines("17_input.txt")))
 
 # --- Simulation ---
 
