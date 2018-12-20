@@ -28,7 +28,7 @@ proc parseMap(data:seq[string]): Map =
     
 var map = parseMap(readFile("17_input.txt").splitLines)
 
-# --- Part 1 and 2---
+# --- Simulation ---
 
 var y = 1
 
@@ -52,8 +52,10 @@ proc tick() =
         dec(y)
     elif nextY: inc(y)
 
+# --- Part 1 and 2---
+
 while y < map.len-2:
-    tick() # Actual simulation
+    tick() # Run simulation
 
 for y in 0..<map.len:
     if map[y].contains('#'):
