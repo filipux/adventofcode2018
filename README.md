@@ -20,3 +20,5 @@
 | 16 | Lots of fun and easy compared to #15. Used templates to get nice CPU emulator code. | https://github.com/filipux/adventofcode2018/blob/master/a16.nim  |
 | 17 | Kept looking for a simple set of local rules to run the simulation and sort of found it in the end. Ugly code but I'm happy with the algorithm I ended up with. First working version took 10 minutes to finish but I was able to optimize it alot down to 0.1 seconds 😎 | https://github.com/filipux/adventofcode2018/blob/master/a17.nim  |
 | 18 | Easy day but ugly code. Realised CountTable can't count to zero. Submitted a feature request. | https://github.com/filipux/adventofcode2018/blob/master/a18.nim  |
+| 19.1 | Part1: Simple rewrite of day 16. Still lots of fun! | https://github.com/filipux/adventofcode2018/blob/master/a19.nim  |
+| 19.2 | Part2: Holy moly. How can something so simple turn out to be so incredibly hard? Almost gave up but ended up doing a line by line analysis and multiple high level rewrites. In the end the problem turned out to be simple again! 😄Code contains all my analysis and iterations.  | https://github.com/filipux/adventofcode2018/blob/master/a19_part2.nim  |
